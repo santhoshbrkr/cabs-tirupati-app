@@ -1,0 +1,116 @@
+<section class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label"><span>Contact Us</span></div>
+      <h2>Book Your <span>Cab Now</span></h2>
+      <p>Fill in your details and we'll get back to you within minutes. Or simply call us!</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Info Panel -->
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <p>Available 24/7 for your travel needs. Call, WhatsApp, or fill the form — we're always ready.</p>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <label>Phone / WhatsApp</label>
+              <a href="tel:+919666650595">+91 96666 50595</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <label>Email</label>
+              <a href="mailto:cabsfortirupatitours@gmail.com">tirupatibalajicabs7&#64;gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <label>Address</label>
+              <span>Motor Works Colony, Padmavathi Puram, Tiruchanoor Rd, Tirupati, AP 517501</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <label>Availability</label>
+              <span>24 Hours, 7 Days a Week, 365 Days a Year</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="tel:+919666650595" class="social-btn phone-btn">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+          <a href="https://wa.me/919666650595" target="_blank" class="social-btn wa-btn">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap">
+        @if (!submitted()) {
+          <form class="contact-form" (ngSubmit)="onSubmit()" #form="ngForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" [(ngModel)]="formData.name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" [(ngModel)]="formData.phone" name="phone" placeholder="+91 9999999999" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Pickup Location *</label>
+                <input type="text" [(ngModel)]="formData.from" name="from" placeholder="e.g. Tirupati Railway Station" required />
+              </div>
+              <div class="form-group">
+                <label>Drop Location *</label>
+                <input type="text" [(ngModel)]="formData.to" name="to" placeholder="e.g. Tirumala / Chennai" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Travel Date *</label>
+                <input type="date" [(ngModel)]="formData.date" name="date" required />
+              </div>
+              <div class="form-group">
+                <label>Vehicle Preference</label>
+                <select [(ngModel)]="formData.vehicle" name="vehicle">
+                  <option value="">Any Vehicle</option>
+                  @for (v of vehicles; track v) {
+                    <option [value]="v">{{ v }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Message / Special Requests</label>
+              <textarea [(ngModel)]="formData.message" name="message" rows="3" placeholder="Any special requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary submit-btn" [disabled]="form.invalid">
+              <i class="fas fa-paper-plane"></i> Send Booking Request
+            </button>
+          </form>
+        } @else {
+          <div class="success-state">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Booking Request Sent!</h3>
+            <p>Thank you! We'll call you back within 15 minutes to confirm your booking.</p>
+            <a href="tel:+919666650595" class="btn-primary">
+              <i class="fas fa-phone"></i> Call to confirm faster
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

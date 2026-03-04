@@ -1,0 +1,49 @@
+<section class="fleet-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label"><span>Our Fleet</span></div>
+      <h2>Choose Your <span>Perfect Ride</span></h2>
+      <p>Well-maintained, air-conditioned vehicles for every occasion and group size.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      @for (f of filters; track f) {
+        <button class="filter-btn" [class.active]="activeFilter() === f" (click)="setFilter(f)">
+          {{ f | titlecase }}
+        </button>
+      }
+    </div>
+
+    <!-- Grid -->
+    <div class="fleet-grid">
+      @for (vehicle of filteredVehicles; track vehicle.name) {
+        <div class="vehicle-card">
+          <div class="vehicle-tag">{{ vehicle.tag }}</div>
+          <div class="vehicle-icon">{{ vehicle.icon }}</div>
+          <div class="vehicle-info">
+            <h3>{{ vehicle.name }}</h3>
+            <div class="vehicle-meta">
+              <span><i class="fas fa-users"></i> {{ vehicle.seats }} Seats</span>
+              <span><i class="fas fa-snowflake"></i> {{ vehicle.ac ? 'AC' : 'Non-AC' }}</span>
+            </div>
+            <ul class="vehicle-features">
+              @for (f of vehicle.features; track f) {
+                <li><i class="fas fa-check-circle"></i> {{ f }}</li>
+              }
+            </ul>
+            <div class="vehicle-footer">
+              <div class="price">
+                <span class="price-from">Starting</span>
+                <span class="price-val">{{ vehicle.price }}</span>
+              </div>
+              <a href="tel:+919666650595" class="book-btn">
+                Book <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

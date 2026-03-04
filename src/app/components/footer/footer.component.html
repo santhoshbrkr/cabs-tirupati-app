@@ -1,0 +1,63 @@
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon"><i class="fas fa-om"></i></div>
+          <div>
+            <span class="logo-main">Cabsfortirupatitours</span>
+            <span class="logo-sub">Trusted Since 2014</span>
+          </div>
+        </div>
+        <p>Your most trusted cab partner in Tirupati. Comfortable, reliable, and affordable travel for pilgrims, tourists, and corporate travelers across Tirupati, Tirumala, and all of South India.</p>
+        <div class="footer-contact">
+          <a href="tel:+919666650595"><i class="fas fa-phone"></i> +91 96666 50595</a>
+          <a href="mailto:cabsfortirupatitours@gmail.com"><i class="fas fa-envelope"></i> tirupatibalajicabs7&#64;gmail.com</a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          @for (s of services; track s.label) {
+            <li><a [routerLink]="s.path"><i class="fas fa-chevron-right"></i> {{ s.label }}</a></li>
+          }
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a routerLink="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a routerLink="/services"><i class="fas fa-chevron-right"></i> Services</a></li>
+          <li><a routerLink="/packages"><i class="fas fa-chevron-right"></i> Packages</a></li>
+          <li><a routerLink="/contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          <li><a href="tel:+919666650595"><i class="fas fa-chevron-right"></i> Book a Cab</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div class="footer-col">
+        <h4>Popular Routes</h4>
+        <ul>
+          @for (d of destinations; track d) {
+            <li><a href="tel:+919666650595"><i class="fas fa-chevron-right"></i> {{ d }}</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© {{ currentYear }} Cabsfortirupatitours. All Rights Reserved.</p>
+      <p class="footer-addr">
+        <i class="fas fa-map-marker-alt"></i>
+        Motor Works Colony, Padmavathi Puram, Tirupati, AP 517501
+      </p>
+    </div>
+  </div>
+</footer>

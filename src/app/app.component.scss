@@ -1,0 +1,36 @@
+.float-call-btn,
+.float-whatsapp-btn {
+  position: fixed;
+  right: 1.5rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+  }
+}
+
+.float-call-btn {
+  bottom: 5.5rem;
+  background: #c8922a;
+}
+
+.float-whatsapp-btn {
+  bottom: 1.5rem;
+  background: #25d366;
+}
+
+main {
+  min-height: calc(100vh - 80px);
+}

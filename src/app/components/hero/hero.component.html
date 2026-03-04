@@ -1,0 +1,85 @@
+<section class="hero">
+  <!-- Background Slides -->
+  @for (slide of slides; track slide.bg; let i = $index) {
+    <div class="hero-slide" [class.active]="currentSlide() === i" [class]="slide.bg + ' hero-slide'">
+      <div class="slide-overlay"></div>
+    </div>
+  }
+
+  <!-- Content -->
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-star"></i> #1 Rated Cab Service in Tirupati
+    </div>
+
+    @for (slide of slides; track slide.bg; let i = $index) {
+      @if (currentSlide() === i) {
+        <div class="slide-text">
+          <h1>
+            <span class="title-line1">{{ slide.title }}</span>
+            <span class="title-line2">{{ slide.subtitle }}</span>
+          </h1>
+          <p class="hero-desc">{{ slide.desc }}</p>
+          <div class="hero-cta">
+            <a href="tel:+919666650595" class="btn-primary">
+              <i class="fas fa-phone"></i> Book Now — Call Us
+            </a>
+            <a routerLink="/packages" class="btn-outline">
+              <i class="fas fa-map-marked-alt"></i> View Packages
+            </a>
+          </div>
+        </div>
+      }
+    }
+
+    <!-- Dots -->
+    <div class="slide-dots">
+      @for (slide of slides; track slide.bg; let i = $index) {
+        <button class="dot" [class.active]="currentSlide() === i" (click)="setSlide(i)"></button>
+      }
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      @for (stat of stats; track stat.label) {
+        <div class="stat-item">
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Quick Booking Bar -->
+<div class="booking-bar">
+  <div class="container booking-inner">
+    <div class="booking-item">
+      <i class="fas fa-map-marker-alt"></i>
+      <div>
+        <label>From</label>
+        <input type="text" placeholder="Tirupati, AP" />
+      </div>
+    </div>
+    <div class="booking-divider"><i class="fas fa-exchange-alt"></i></div>
+    <div class="booking-item">
+      <i class="fas fa-map-pin"></i>
+      <div>
+        <label>To</label>
+        <input type="text" placeholder="Destination" />
+      </div>
+    </div>
+    <div class="booking-item">
+      <i class="fas fa-calendar"></i>
+      <div>
+        <label>Date</label>
+        <input type="date" />
+      </div>
+    </div>
+    <a href="tel:+919666650595" class="btn-primary booking-btn">
+      <i class="fas fa-taxi"></i> Find a Cab
+    </a>
+  </div>
+</div>

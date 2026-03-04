@@ -1,0 +1,30 @@
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label"><span>Our Services</span></div>
+      <h2>Everything You Need for a <span>Perfect Journey</span></h2>
+      <p>From sacred pilgrimages to airport transfers, we cover all your travel needs across Tirupati & beyond.</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="service-card" [style.--accent]="service.color">
+          <div class="card-accent"></div>
+          <div class="icon-wrap">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.desc }}</p>
+          <ul class="features">
+            @for (f of service.features; track f) {
+              <li><i class="fas fa-check"></i> {{ f }}</li>
+            }
+          </ul>
+          <a routerLink="/contact" class="card-cta">
+            Book This <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
