@@ -5,9 +5,9 @@ import {
   __spreadValues,
   setClassMetadata,
   ɵɵdefineInjectable
-} from "./chunk-JKRINKGA.js";
+} from "./chunk-6ROH4R5H.js";
 
-// node_modules/@angular/animations/fesm2022/private_export-faY_wCkZ.mjs
+// ../node_modules/@angular/animations/fesm2022/private_export-faY_wCkZ.mjs
 var AnimationMetadataType;
 (function(AnimationMetadataType2) {
   AnimationMetadataType2[AnimationMetadataType2["State"] = 0] = "State";
@@ -262,7 +262,7 @@ var AnimationGroupPlayer = class {
 };
 var ɵPRE_STYLE = "!";
 
-// node_modules/@angular/animations/fesm2022/util-D9FfmVnv.mjs
+// ../node_modules/@angular/animations/fesm2022/util-D9FfmVnv.mjs
 var LINE_START = "\n - ";
 function invalidTimingValue(exp) {
   return new RuntimeError(3e3, ngDevMode && `The provided timing value "${exp}" is invalid.`);
@@ -729,7 +729,7 @@ function computeStyle(element, prop) {
   return window.getComputedStyle(element)[prop];
 }
 
-// node_modules/@angular/animations/fesm2022/browser.mjs
+// ../node_modules/@angular/animations/fesm2022/browser.mjs
 var NoopAnimationDriver = class _NoopAnimationDriver {
   /**
    * @returns Whether `prop` is a valid CSS property
@@ -4361,4 +4361,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=browser-MBBCKCIL.js.map
+//# sourceMappingURL=browser-QYYNPI7V.js.map
